@@ -1,0 +1,2 @@
+epochs,test_loss,test_accuracy,train_samples,test_samples,device
+10,0.8755629062652588,0.707099974155426,50000,10000,CPU

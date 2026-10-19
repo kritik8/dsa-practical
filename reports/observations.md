@@ -2,7 +2,7 @@
 
 Practical Manual 2026–27, IIIT Bhopal. One section per experiment; each entry summarises the actual run of the corresponding notebook (all notebooks executed end-to-end from a fresh kernel with fixed seeds).
 
-> Status: Experiments 1–8 completed (Batches 1 and 2). Experiments 9–14 pending.
+> Status: Experiments 1–13 completed. Experiment 14 is intentionally out of scope.
 
 ---
 
@@ -71,13 +71,42 @@ Practical Manual 2026–27, IIIT Bhopal. One section per experiment; each entry 
 
 ---
 
-## Pending experiments
+## Experiment 9 — Neural Network (MNIST)
+**Notebook:** `notebooks/exp09_neural_network.ipynb` · **Dataset:** MNIST from supplied IDX files (`datasets/mnist/`)
 
-| # | Experiment | Status |
-|---|---|---|
-| 9 | Neural Network (MNIST) | Pending (Batch 3; needs TensorFlow) |
-| 10 | Image Classification using CNN | Pending (Batch 3; needs TensorFlow) |
-| 11 | Performance Metrics | Pending (Batch 3) |
-| 12 | k-Means Clustering | Pending (Batch 4) |
-| 13 | Hierarchical Clustering | Pending (Batch 4; needs penguins.csv download) |
-| 14 | NoSQL using MongoDB | Pending (Batch 4; needs MongoDB Atlas connection string) |
+- The supplied IDX files provided 60,000 training and 10,000 test images, each 28 × 28 pixels.
+- After five epochs, the neural network reached **97.00% test accuracy** (test loss 0.0994).
+- The prediction grid shows the model output beside actual labels for 15 test digits.
+
+## Experiment 10 — Image Classification using a CNN
+**Notebook:** `notebooks/exp10_cnn_image_classification.ipynb` · **Dataset:** CIFAR-10 via `tensorflow.keras.datasets.cifar10` (50,000 training and 10,000 test images)
+
+- The supplied archive contained only one of the five training batches, so the notebook used the complete Keras dataset.
+- A two-block convolutional network trained for **10 epochs** with a held-out validation split; training ran on CPU because no GPU was available.
+- Test accuracy was **70.71%** with a test loss of **0.8756**. The saved sample, training-curve and prediction figures document the run.
+
+## Experiment 11 — Performance Metrics
+**Notebook:** `notebooks/exp11_performance_metrics.ipynb` · **Dataset:** `datasets/breast-cancer.csv` (569 × 30; malignant label 0)
+
+- Logistic Regression (scaled in a train-only pipeline) achieved **98.25% accuracy**, **97.62% malignant precision, recall and F1**, and **0.9954 AUC**.
+- The depth-5 Decision Tree achieved **92.11% accuracy**, **86.67% malignant precision**, **92.86% recall**, **89.66% F1**, and **0.9163 AUC**.
+- Manual confusion-matrix calculations matched scikit-learn for every metric. Logistic Regression led in AUC and malignant recall; recall is especially important because false negatives represent missed malignant cases.
+
+## Experiment 12 — k-Means Clustering
+**Notebook:** `notebooks/exp12_kmeans_clustering.ipynb` · **Dataset:** `datasets/iris.csv` (150 flowers; four numerical features used for fitting)
+
+- The inertia curve drops sharply through k = 3 and then flattens; k = 3 was used to compare against the three species.
+- The k-Means result had **silhouette 0.4590** and **adjusted Rand index 0.6201**.
+- Setosa formed a distinct cluster; versicolor and virginica overlapped, as shown in the contingency table. Species labels were not used in model fitting.
+
+## Experiment 13 — Hierarchical Clustering
+**Notebook:** `notebooks/exp13_hierarchical_clustering.ipynb` · **Dataset:** `datasets/penguins.csv` extracted from supplied `archive (3).zip` (342 complete selected rows)
+
+- All 342 cleaned observations were used for three-cluster evaluation; reproducible dendrograms used a 100-row sample for readability.
+- Adjusted Rand index: **Ward 0.9159**, complete 0.8949, single 0.6572. Ward linkage best matched species overall; single linkage chained many Adelie and Chinstrap observations together.
+
+---
+
+## Experiment 14 — NoSQL using MongoDB
+
+Intentionally out of scope for this implementation.

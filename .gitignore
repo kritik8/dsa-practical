@@ -6,6 +6,9 @@ env/
 # Source archives (already extracted into datasets/)
 *.zip
 
+# Large local MNIST IDX files (recreate from the supplied archive or use Keras fallback)
+datasets/mnist/
+
 # Python caches / bytecode
 __pycache__/
 *.pyc
