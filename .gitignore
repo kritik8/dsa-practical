@@ -1,0 +1,34 @@
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Source archives (already extracted into datasets/)
+*.zip
+
+# Python caches / bytecode
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+
+# Secrets and credentials
+.env
+*.env
+credentials*
+secrets*
+*.pem
+*.key
+connection*.txt
+
+# Jupyter temporary files
+*.nbconvert.ipynb
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
