@@ -1,0 +1,2 @@
+species_count,train_images,validation_images,test_images,epochs,test_loss,test_accuracy,tensorflow_version
+5,176,44,55,10,0.1311732977628708,0.9818181991577148,2.21.0

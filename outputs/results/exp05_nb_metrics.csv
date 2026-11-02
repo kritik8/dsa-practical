@@ -1,0 +1,2 @@
+test_accuracy,spam_precision,spam_recall,true_negative,false_positive,false_negative,true_positive
+0.9623318385650225,1.0,0.7181208053691275,966,0,42,107

@@ -1,0 +1,9 @@
+region,product,quantity,unit_price,amount
+North,Notebook,3,4.5,13.5
+North,Pen,10,1.2,12.0
+South,Notebook,5,4.5,22.5
+South,Folder,4,2.75,11.0
+West,Pen,8,1.2,9.6
+West,Folder,6,2.75,16.5
+East,Notebook,2,4.5,9.0
+East,Pen,12,1.2,14.399999999999999

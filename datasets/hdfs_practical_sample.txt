@@ -1,0 +1,3 @@
+IT-411 Hadoop practical sample
+HDFS stores files in a distributed namespace.
+This file contains no personal or confidential data.
