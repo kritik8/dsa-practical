@@ -15,5 +15,9 @@ ipykernel==6.30.1
 # Experiments 9-10 (Neural Network, CNN) — large download
 tensorflow==2.21.0
 
-# Experiment 14 (NoSQL with MongoDB)
+# Experiment 15 (NoSQL with MongoDB)
 pymongo==4.19.0
+mongomock==4.3.0
+
+# Experiment 14 (Apache Spark local-mode notebook)
+pyspark==4.3.0

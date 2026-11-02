@@ -1,0 +1,13 @@
+flowchart TD
+    A[Licensed bird image dataset] --> B[Verify labels, duplicates, and class counts]
+    B --> C[Split by source or individual where possible]
+    C --> D[Resize and normalize]
+    D --> E[Training-only augmentation]
+    E --> F[Convolution + activation]
+    F --> G[Pooling]
+    G --> H[Repeated feature-extraction blocks]
+    H --> I[Global pooling or flatten]
+    I --> J[Dense layer and softmax]
+    J --> K[Train with validation and early stopping]
+    K --> L[Untouched test evaluation]
+    L --> M[Per-species metrics, confusion matrix, sample predictions]

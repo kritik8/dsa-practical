@@ -1,0 +1,18 @@
+flowchart LR
+    subgraph PCA[Experiment 7 - PCA]
+        A[Numeric feature matrix] --> B[Train-only imputation and scaling]
+        B --> C[Fit PCA]
+        C --> D[Explained variance and cumulative curve]
+        C --> E[Project to selected components]
+        E --> F[2D component visualization]
+        E --> G[Optional downstream model comparison]
+    end
+    subgraph ANN[Experiment 8 - ANN]
+        H[Labeled examples] --> I[Train / validation / test split]
+        I --> J[Train-only preprocessing]
+        J --> K[Input layer]
+        K --> L[Hidden layers and activations]
+        L --> M[Output layer and suitable loss]
+        M --> N[Training with validation monitoring]
+        N --> O[Learning curves and held-out evaluation]
+    end

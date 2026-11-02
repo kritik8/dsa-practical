@@ -1,0 +1,20 @@
+flowchart TD
+    A[Approved labeled dataset] --> B[Define target and error costs]
+    B --> C[Train / validation / test split]
+    C --> D[Fit preprocessing on training data only]
+    D --> E{Task}
+    E -- Continuous target --> F[Linear Regression]
+    F --> F1[Ridge: L2 shrinkage]
+    F --> F2[Lasso: L1 shrinkage and feature selection]
+    F1 --> G[MAE, RMSE, R2; inspect residuals]
+    F2 --> G
+    E -- Class labels --> H[SVM: margin and kernel]
+    E -- Class labels --> I[KNN: distance and k]
+    E -- Class labels --> J[Decision Tree]
+    J --> J1[Random Forest: aggregate randomized trees]
+    H --> K[Confusion matrix and per-class metrics]
+    I --> K
+    J1 --> K
+    G --> L[Compare validation evidence]
+    K --> L
+    L --> M[Final test evaluation and documented conclusion]

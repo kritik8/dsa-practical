@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant N as Notebook
+    participant P as PyMongo client
+    participant M as MongoDB
+    N->>P: Connect using protected URI
+    P->>M: Select practice database and collection
+    N->>P: Insert fictional sample documents
+    P->>M: insert_one / insert_many
+    M-->>P: Inserted identifiers
+    N->>P: Query with filter and projection
+    P->>M: find
+    M-->>N: Matching documents
+    N->>P: Update known sample document
+    P->>M: update_one
+    M-->>N: Matched and modified counts
+    N->>P: Delete only practice record
+    P->>M: delete_one
+    M-->>N: Deleted count

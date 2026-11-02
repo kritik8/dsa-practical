@@ -1,0 +1,14 @@
+flowchart LR
+    subgraph HDFS[Experiment 13 - Hadoop HDFS]
+        A[Local sample file] --> B[HDFS client command]
+        B --> C[NameNode namespace and metadata]
+        C --> D[DataNode block storage]
+        D --> E[HDFS list / read / download verification]
+    end
+    subgraph SPARK[Experiment 14 - Apache Spark]
+        F[Local or distributed Spark runtime] --> G[SparkSession]
+        G --> H[Read CSV or JSON as DataFrame]
+        H --> I[Schema and transformations]
+        I --> J[Action triggers computation]
+        J --> K[Inspect and compare result]
+    end

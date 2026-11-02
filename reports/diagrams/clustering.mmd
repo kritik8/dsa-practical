@@ -1,0 +1,16 @@
+flowchart TD
+    A[Numeric observations; labels excluded from fitting] --> B[Handle missing values and select features]
+    B --> C[Scale features]
+    C --> D{Clustering method}
+    D -- K-Means --> E[Test k values and plot inertia]
+    E --> F[Fit selected k with repeated initialization]
+    D -- Hierarchical --> G[Compute linkage matrix]
+    G --> H[Plot dendrogram and select a cut]
+    F --> I[Cluster sizes and feature profiles]
+    H --> I
+    I --> J[Silhouette and stability checks]
+    J --> K{Ground-truth labels available?}
+    K -- Yes --> L[External score after fitting, e.g. ARI]
+    K -- No --> M[Interpret descriptive profiles only]
+    L --> N[State limitations and conclusion]
+    M --> N

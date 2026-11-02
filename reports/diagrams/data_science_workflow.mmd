@@ -1,0 +1,14 @@
+flowchart TD
+    A[Define question and target] --> B[Register a candidate-unique dataset]
+    B --> C[Record source, license, and data dictionary]
+    C --> D[Inspect shape, types, missing values, and quality]
+    D --> E[Clean and visualize with documented decisions]
+    E --> F{Modeling required?}
+    F -- No --> G[Summarize evidence and limitations]
+    F -- Yes --> H[Split data before fitting preprocessing]
+    H --> I[Fit preprocessing on training data]
+    I --> J[Train and validate model]
+    J --> K[Evaluate once on held-out test data]
+    K --> L[Save actual outputs, figures, and metrics]
+    G --> M[Write observation and result]
+    L --> M
